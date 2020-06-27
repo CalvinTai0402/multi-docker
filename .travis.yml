@@ -10,10 +10,10 @@ script:
     - docker run -e CI=true calvintjf/react-test npm test
 
 after_success:
-    - docker build -t -calvintjf/multi-client ./client
-    - docker build -t -calvintjf/multi-nginx ./nginx
-    - docker build -t -calvintjf/multi-server ./server
-    - docker build -t -calvintjf/multi-worker ./worker
+    - docker build -t calvintjf/multi-client ./client
+    - docker build -t calvintjf/multi-nginx ./nginx
+    - docker build -t calvintjf/multi-server ./server
+    - docker build -t calvintjf/multi-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push calvintjf/multi-client
     - docker push calvintjf/multi-nginx
