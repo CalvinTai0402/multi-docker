@@ -13,7 +13,7 @@ after_success:
     - docker build -t -calvintjf/multi-nginx ./nginx
     - docker build -t -calvintjf/multi-server ./server
     - docker build -t -calvintjf/multi-worker ./worker
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin docker.io
     - docker push calvintjf/multi-client
     - docker push calvintjf/multi-nginx
     - docker push calvintjf/multi-server
